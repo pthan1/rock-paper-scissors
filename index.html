@@ -15,11 +15,32 @@
       <div class="wins"><h3>WINS: </h3></div>
     </section>
     <section class="center-section">
-      <section class="title">
-        <h1>ROCK, PAPER, SCISSORS</h1>
+      <section class="choose-your-game-view hidden">
+          <h1>ROCK, PAPER, SCISSORS</h1>
+          <h2>Choose Your Game!</h2>
       </section>
-      <div class="choose-your-fighter-view">
-        <h2>Choose Your Fighter!</h2><br><br>
+      <section class="choose-your-fighter-classic-view">
+        <h1>ROCK, PAPER, SCISSORS</h1>
+        <h2>Choose Your Fighter!</h2>
+        <div class="fighter-icons">
+          <button class="fighter-buttons rockBtnClassic" id="rockClassic">
+            <img class="fighter-icons" src="../assets/black-and-white-rocks.png" alt="rock fighter">
+          </button>
+          <button class="fighter-buttons paperBtnClassic" id="paperClassic">
+            <img class="fighter-icons" src="../assets/black-and-white-paper.png" alt="paper fighter">
+          </button>
+          <button class="fighter-buttons scissorsBtnClassic" id="scissorsClassic">
+            <img class="fighter-icons" src="../assets/black-and-white-scissors.png" alt="scissors fighter">
+          </button>
+        </div>
+        <section class="game-rules">
+          GAME RULES: <br>
+          ROCK SMASHES SCISSORS<br>
+          SCISSORS CUTS PAPER<br>
+          PAPER COVERS ROCK
+        </section>
+      </section>
+      <section class="choose-your-fighter-difficult-view hidden">
         <button class="fighter-buttons rockBtnClassic" type="image">
           <img class="fighter-icons" src="../assets/black-and-white-rocks.png" alt="rock fighter">
         </button>
@@ -29,16 +50,13 @@
         <button class="fighter-buttons scissorsBtnClassic">
           <img class="fighter-icons" src="../assets/black-and-white-scissors.png" alt="scissors fighter">
         </button>
-</div>
-      <div class="game-rules">
-        GAME RULES: <br>
-        ROCK SMASHES SCISSORS<br>
-        SCISSORS CUTS PAPER<br>
-        PAPER COVERS ROCK
+      </section>
     </section>
     <section class="right-section">
       <div class="player-stats" id="human-stats"><h2 class="black-text">COMPUTER</h2>
       <div class="wins"><h3>WINS: </h3></div>
+    </section>
+    </section>
     </section>
   </section>
   <script src="./main.js" async defer></script>
