@@ -34,8 +34,8 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 55vw;
-	height: 80vh;
+	width: 50vw;
+	height: 85vh;
 }
 
 .right-section {
@@ -66,25 +66,47 @@ h3 {
 	border-radius: 5%;
 }
 
-.choose-your-fighter-view {
+.choose-your-game-view {
 	text-align: center;
 	border: 3px solid #e6e6dd;
 	width: 100%;
-	height: 70%;
+	height: 80%;
 	color: #e6e6dd;
 	border-radius: 5%;
-
 	/* margin-bottom: 10%; */
 }
 
+.choose-your-fighter-classic-view {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border: 3px solid #e6e6dd;
+	width: 100%;
+	height: 55%;
+	color: #e6e6dd;
+	border-radius: 5%;
+	/* margin-top: 15%; */
+}
+
+choose-your-fighter-difficult-view {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border: 3px solid #e6e6dd;
+	width: 100%;
+	height: 55%;
+	color: #e6e6dd;
+	border-radius: 5%;
+	/* margin-top: 15%; */
+}
 .game-rules {
 	border: 3px solid #e6e6dd;
 	/* border-top: none; */
 	width: 100%;
-	height: 20%;
+	height: auto;
 	text-align: center;
 	font-size: 24px;
-	padding-top: 5px;
+	/* margin-top: 100px; */
 	/* color: #bd9f22; */
 	color: #e0c667;
 	border-radius: 5%;
@@ -103,11 +125,20 @@ h3 {
 }
 
 .fighter-icons {
-	max-width: 15%;
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 5%;
+	max-width: 100%;
 	height: auto;
+	margin-bottom: 20%;
 }
 
 .fighter-buttons {
 	background: transparent;
-	width: 50%;
+	width: 20%;
+	border: none;
+}
+
+.hidden {
+	display: none;
 }
