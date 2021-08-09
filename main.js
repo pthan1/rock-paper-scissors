@@ -16,8 +16,11 @@ var humanPlayer = new Player ("Human", "🚀");
 var computerPlayer = new Player ("Computer", "👾");
 var newGame = new Game();
 
+// Fighter arrays
+var classicFighters = ["rock", "paper", "scissors"];
+var difficultFighters = ["rock", "paper", "scissors", "alien", "ghost"];
+
 //Event Listeners for Game Mode Selection Buttons
-// chooseYourGameBtns.addEventListener("click", newGame.selectGameType);
 classicModeBtn.addEventListener("click", function() {newGame.selectGameType("classic")});
 difficultModeBtn.addEventListener("click", function() {newGame.selectGameType("difficult")});
 
@@ -29,9 +32,14 @@ difficultModeBtn.addEventListener("click", function() {newGame.selectGameType("d
 
 // Show/Hide by Class THESE DON'T WORK!!!!!!!
 function show(element) {
-  element.classList.add("hidden");
+  element.classList.remove("hidden");
 }
 
 function hide(element) {
-  element.classList.remove("hidden");
+  element.classList.add("hidden");
 }
+
+function getRandomFighter(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
