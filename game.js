@@ -6,14 +6,13 @@ class Game {
   }
 
   selectGameType(type) {
+    hide(chooseYourGameView);
     if (type === "classic") {
-      chooseYourGameView.classList.add("hidden");
-      classicModeView.classList.remove("hidden");
+      show(classicModeView);
     }
     
     if (type === "difficult") {
-      chooseYourGameView.classList.add("hidden");
-      difficultModeView.classList.remove("hidden");
+      show(difficultModeView);
     }
   }
 
