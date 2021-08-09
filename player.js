@@ -3,6 +3,7 @@ class Player {
   this.name = name;
   this.token = token;
   this.wins = 0;
+  this.selection = "";
   }
 
   saveWinsToStorage() {
@@ -13,7 +14,9 @@ class Player {
 
   }
   
-  takeTurn() {
-    
+  takeTurn(fighterSelection) {
+    this.selection = fighterSelection;
+    computerPlayer.selection = classicFightersSelection[getRandomIndex(classicFightersSelection)];
   }
+
 }
