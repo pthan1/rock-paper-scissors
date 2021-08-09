@@ -1,12 +1,19 @@
-var Player = require(".player.js");
+// var Player = require("./player.js");
 
 class Game {
   trackGameData() {
 
   }
 
-  selectGameType() {
-
+  selectGameType(type) {
+    hide(chooseYourGameView);
+    if (type === "classic") {
+      show(classicModeView);
+    }
+    
+    if (type === "difficult") {
+      show(difficultModeView);
+    }
   }
 
   checkForWinConditions() {
