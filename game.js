@@ -4,10 +4,11 @@ class Game {
   trackGameData(winner) {
     if (winner === "humanPlayer") {
       humanPlayer.wins += 1;
+      humanPlayer.saveWinsToStorage();
     }
-
     if (winner === "computerPlayer") {
       computerPlayer.wins += 1;
+      computerPlayer.saveWinsToStorage();
     }
   }
 
@@ -16,7 +17,6 @@ class Game {
     if (type === "classic") {
       show(classicModeView);
     }
-    
     if (type === "difficult") {
       show(difficultModeView);
     }
