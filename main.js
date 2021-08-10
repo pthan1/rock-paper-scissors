@@ -11,7 +11,14 @@ var rockBtnClassic = document.getElementById("rockBtnClassic");
 var paperBtnClassic = document.getElementById("paperBtnClassic");
 var scissorsBtnClassic = document.getElementById("scissorsBtnClassic");
 
-// Instantiating Player and Game Classes on (Load?)
+//Difficult Mode Fighter Icons
+var rockBtnDifficult = document.getElementById("rockBtnDifficult");
+var paperBtnDifficult = document.getElementById("paperBtnDifficult");
+var scissorsBtnDifficult = document.getElementById("scissorsBtnDifficult");
+var alienBtnDifficult = document.getElementById("alienBtnDifficult");
+var ghostBtnDifficult = document.getElementById("ghostBtnDifficult");
+
+// Instantiating Player and Game Classes on Load
 var humanPlayer = new Player ("Human", "🚀");
 var computerPlayer = new Player ("Computer", "👾");
 var newGame = new Game();
@@ -38,7 +45,22 @@ paperBtnClassic.addEventListener("click", function() {
 scissorsBtnClassic.addEventListener("click", function() {
   humanPlayer.takeTurn("scissors")
 });
-
+//Event Listeners for Difficult Icons
+rockBtnDifficult.addEventListener("click", function () {
+  humanPlayer.takeTurn("rock")
+});
+paperBtnDifficult.addEventListener("click", function () {
+  humanPlayer.takeTurn("paper")
+});
+scissorsBtnDifficult.addEventListener("click", function () {
+  humanPlayer.takeTurn("scissors")
+});
+alienBtnDifficult.addEventListener("click", function () {
+  humanPlayer.takeTurn("alien")
+});
+ghostBtnDifficult.addEventListener("click", function () {
+  humanPlayer.takeTurn("ghost")
+});
 
 // Show/Hide by Class THESE DON'T WORK!!!!!!!
 function show(element) {
