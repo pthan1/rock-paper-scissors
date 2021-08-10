@@ -9,6 +9,7 @@ var playerSelectionsIconContainerClassic = document.getElementById("player-selec
 var playerSelectionsIconContainerDifficult = document.getElementById("player-selections-icon-container-difficult");
 
 var winnerDisplayHeader = document.querySelector(".winner-display-header");
+var winnerDisplayHeaderDifficult = document.querySelector(".winner-display-header-difficult");
 
 var gameRulesClassic = document.querySelector(".game-rules-classic");
 var gameRulesDifficult = document.querySelector(".game-rules-difficult");
@@ -109,13 +110,15 @@ function playGame(fighter) {
 
   if (!classicModeView.classList.contains("hidden")) {
   displayClassicPlayerSelections(classicFightersSelection);
+  displayWinner();
   }
 
   if (!difficultModeView.classList.contains("hidden")) {
   displayDifficultPlayerSelections(difficultFightersSelection);
+  displayWinnerDifficult();
   }
 
-  displayWinner();
+  console.log('console log in playGame fxn');
 };
 
 function show(element) {
@@ -206,5 +209,8 @@ function displayDifficultPlayerSelections(array) {
 
 function displayWinner() {
   winnerDisplayHeader.innerText = newGame.checkForWinConditions();
+}
+function displayWinnerDifficult() {
+  winnerDisplayHeaderDifficult.innerText = newGame.checkForWinConditions();
 }
 
