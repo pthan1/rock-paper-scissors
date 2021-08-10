@@ -7,11 +7,14 @@ class Player {
   }
 
   saveWinsToStorage() {
-
+    var stringifiedHumanObject = JSON.stringify(humanPlayer);
+    var stringifiedComputerObject = JSON.stringify(computerPlayer);
+    localStorage.setItem('humanPlayerData', stringifiedHumanObject);
+    localStorage.setItem('computerPlayerData', stringifiedComputerObject);
   }
 
   retrieveWinsFromStorage() {
-
+    
   }
   
   takeTurn(fighterSelection) {
