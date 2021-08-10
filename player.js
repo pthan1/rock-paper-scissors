@@ -9,12 +9,16 @@ class Player {
   saveWinsToStorage() {
     var stringifiedHumanObject = JSON.stringify(humanPlayer);
     var stringifiedComputerObject = JSON.stringify(computerPlayer);
-    localStorage.setItem('humanPlayerData', stringifiedHumanObject);
-    localStorage.setItem('computerPlayerData', stringifiedComputerObject);
+    localStorage.setItem("humanPlayerData", stringifiedHumanObject);
+    localStorage.setItem("computerPlayerData", stringifiedComputerObject);
+    this.retrieveWinsFromStorage();
   }
 
   retrieveWinsFromStorage() {
-    
+    var humanPlayerObjectNotParsed = localStorage.getItem("humanPlayerData");
+    var computerPlayerObjectNotParsed = localStorage.getItem("computerPlayerData");
+    humanPlayerObjectParsed = JSON.parse(humanPlayerObjectNotParsed);
+    computerPlayerObjectParsed = JSON.parse(computerPlayerObjectNotParsed);
   }
   
   takeTurn(fighterSelection) {
