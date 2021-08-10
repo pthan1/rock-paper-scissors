@@ -41,9 +41,9 @@ class Game {
       (this.humanPlayer.selection === "alien" && this.computerPlayer.selection === "scissors") ||
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "paper") ||
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "alien")) {
-      this.trackGameData("humanPlayer");
-      
-      console.log('human wins', 'human:', this.humanPlayer.selection, 'computer: ', this.computerPlayer.selection);
+        this.trackGameData("humanPlayer");
+        console.log('human wins', 'human:', this.humanPlayer.selection, 'computer: ', this.computerPlayer.selection);
+        return `${this.humanPlayer.name} wins!`;
     } else if (
       (this.humanPlayer.selection === "rock" && this.computerPlayer.selection === "paper") ||
       (this.humanPlayer.selection === "paper" && this.computerPlayer.selection === "scissors") ||
@@ -56,11 +56,11 @@ class Game {
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "rock") ||
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "scissors")) {
       this.trackGameData("computerPlayer");
-      
       console.log('Computer wins', 'human:', this.humanPlayer.selection, 'computer: ', this.computerPlayer.selection);
+      return `${this.computerPlayer.name} wins!`;
     } else {
-      
       this.detectDraw();
+      return 'Draw';
     }
   }
 
