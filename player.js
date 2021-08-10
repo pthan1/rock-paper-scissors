@@ -7,8 +7,8 @@ class Player {
   }
 
   saveWinsToStorage() {
-    var stringifiedHumanObject = JSON.stringify(humanPlayer);
-    var stringifiedComputerObject = JSON.stringify(computerPlayer);
+    var stringifiedHumanObject = JSON.stringify(newGame.humanPlayer);
+    var stringifiedComputerObject = JSON.stringify(newGame.computerPlayer);
     localStorage.setItem("humanPlayerData", stringifiedHumanObject);
     localStorage.setItem("computerPlayerData", stringifiedComputerObject);
     this.retrieveWinsFromStorage();
@@ -23,14 +23,13 @@ class Player {
   
   takeTurn(fighterSelection) {
     this.selection = fighterSelection;
-
     if (!classicModeView.classList.contains("hidden")) {
-      computerPlayer.selection = classicFightersSelection[getRandomIndex(classicFightersSelection)];
+      newGame.computerPlayer.selection = classicFightersSelection[getRandomIndex(classicFightersSelection)];
       displayClassicPlayerSelections(classicFightersSelection);
       console.log('classic Mode');
     }
     if (!difficultModeView.classList.contains("hidden")) {
-      computerPlayer.selection = difficultFightersSelection[getRandomIndex(difficultFightersSelection)];
+      newGame.computerPlayer.selection = difficultFightersSelection[getRandomIndex(difficultFightersSelection)];
       displayDifficultPlayerSelections(difficultFightersSelection);
       console.log('this works');
     }

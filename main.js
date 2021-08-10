@@ -8,6 +8,8 @@ var playerSelectionsDifficultModeView = document.getElementById("player-selectio
 var playerSelectionsIconContainerClassic = document.getElementById("player-selections-icon-container-classic");
 var playerSelectionsIconContainerDifficult = document.getElementById("player-selections-icon-container-difficult");
 
+var winnerDisplayHeader = document.querySelector(".winner-display-header");
+
 var gameRulesClassic = document.querySelector(".game-rules-classic");
 var gameRulesDifficult = document.querySelector(".game-rules-difficult");
 
@@ -30,8 +32,8 @@ var alienBtnDifficult = document.getElementById("alienBtnDifficult");
 var ghostBtnDifficult = document.getElementById("ghostBtnDifficult");
 
 // Instantiating Player and Game Classes on Load
-var humanPlayer = new Player ("Human", "🚀");
-var computerPlayer = new Player ("Computer", "👾");
+// var humanPlayer = new Player ("Human", "🚀");
+// var computerPlayer = new Player ("Computer", "👾");
 var newGame = new Game();
 
 // Parsed Player Objects
@@ -48,29 +50,29 @@ difficultModeBtn.addEventListener("click", function() {newGame.selectGameType("d
 
 //Event Listeners for Fighter Icons
 rockBtnClassic.addEventListener("click", function() {
-  humanPlayer.takeTurn("rock");
+  newGame.humanPlayer.takeTurn("rock");
 });
 paperBtnClassic.addEventListener("click", function() {
-  humanPlayer.takeTurn("paper");
+  newGame.humanPlayer.takeTurn("paper");
 });
 scissorsBtnClassic.addEventListener("click", function() {
-  humanPlayer.takeTurn("scissors");
+  newGame.humanPlayer.takeTurn("scissors");
 });
 //Event Listeners for Difficult Icons
 rockBtnDifficult.addEventListener("click", function () {
-  humanPlayer.takeTurn("rock")
+  newGame.humanPlayer.takeTurn("rock")
 });
 paperBtnDifficult.addEventListener("click", function () {
-  humanPlayer.takeTurn("paper")
+  newGame.humanPlayer.takeTurn("paper")
 });
 scissorsBtnDifficult.addEventListener("click", function () {
-  humanPlayer.takeTurn("scissors")
+  newGame.humanPlayer.takeTurn("scissors")
 });
 alienBtnDifficult.addEventListener("click", function () {
-  humanPlayer.takeTurn("alien")
+  newGame.humanPlayer.takeTurn("alien")
 });
 ghostBtnDifficult.addEventListener("click", function () {
-  humanPlayer.takeTurn("ghost")
+  newGame.humanPlayer.takeTurn("ghost")
 });
 
 // Show/Hide by Class THESE DON'T WORK!!!!!!!
@@ -90,21 +92,21 @@ function displayClassicPlayerSelections(array) {
   hide(classicModeView);
   show(playerSelectionsClassicModeView);
   for (var i = 0; i < array.length; i++) {
-    if (array[i] === humanPlayer.selection || array[i] === computerPlayer.selection) {
+    if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
       playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
       <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
       <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
       console.log("THIS WORKS 1 ");
     }
-    if (array[i] === humanPlayer.selection && array[i] === computerPlayer.selection) {
+    if (array[i] === newGame.humanPlayer.selection && array[i] === newGame.computerPlayer.selection) {
       playerSelectionsClassicModeView.innerHTML = `
       <h1>ROCK, PAPER, SCISSORS</h1>
-      <h2>Choose Your Fighter!</h2>
+      <h2 class="winner-display-header">Choose Your Fighter!</h2>
       <div class="fighter-icons-container-classic" id="player-selections-icon-container-classic">
-      <button class="fighter-buttons-classic" id="${humanPlayer.selection}BtnClassic">
-      <img class="fighter-icons-classic" src="../assets/black-and-white-${humanPlayer.selection}.png" alt="${humanPlayer.selection} fighter">
-      <button class="fighter-buttons-classic" id="${computerPlayer.selection}BtnClassic">
-      <img class="fighter-icons-classic" src="../assets/black-and-white-${computerPlayer.selection}.png" alt="${computerPlayer.selection} fighter"></div>`;
+      <button class="fighter-buttons-classic" id="${newGame.humanPlayer.selection}BtnClassic">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${newGame.humanPlayer.selection}.png" alt="${newGame.humanPlayer.selection} fighter">
+      <button class="fighter-buttons-classic" id="${newGame.computerPlayer.selection}BtnClassic">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${newGame.computerPlayer.selection}.png" alt="${newGame.computerPlayer.selection} fighter"></div>`;
     }
   }
 }
@@ -113,19 +115,24 @@ function displayDifficultPlayerSelections(array) {
   hide(difficultModeView);
   show(playerSelectionsDifficultModeView);
   for (var i = 0; i < array.length; i++) {
-    if (array[i] === humanPlayer.selection || array[i] === computerPlayer.selection) {
+    if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
       playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
       <button class="fighter-buttons-difficult" id="${array[i]}BtnDifficult">
       <img class="fighter-icons-difficult" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
     } 
-    if (array[i] === humanPlayer.selection && array[i] === computerPlayer.selection) {
+    if (array[i] === newGame.humanPlayer.selection && array[i] === newGame.computerPlayer.selection) {
       playerSelectionsDifficultModeView.innerHTML = `
         <h1>ROCK, PAPER, SCISSORS</h1>
-        <h2>Choose Your Fighter!</h2>
-          <div class="fighter-icons-container-difficult"><button class="fighter-buttons-difficult" id="${humanPlayer.selection}BtnDifficult">
-        <img class="fighter-icons-difficult" src="../assets/black-and-white-${humanPlayer.selection}.png" alt="${humanPlayer.selection} fighter">
-        <button class="fighter-buttons-difficult" id="${computerPlayer.selection}BtnDifficult">
-        <img class="fighter-icons-difficult" src="../assets/black-and-white-${computerPlayer.selection}.png" alt="${computerPlayer.selection} fighter"></div>`;
+        <h2 class="winner-display-header">Choose Your Fighter!dsafasfdasd</h2>
+        <div class="fighter-icons-container-difficult"><button class="fighter-buttons-difficult" id="${newGame.humanPlayer.selection}BtnDifficult">
+        <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.humanPlayer.selection}.png" alt="${newGame.humanPlayer.selection} fighter">
+        <button class="fighter-buttons-difficult" id="${newGame.computerPlayer.selection}BtnDifficult">
+        <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.computerPlayer.selection}.png" alt="${newGame.computerPlayer.selection} fighter"></div>`;
     }
   }
+}
+
+function displayWinner() {
+  winnerDisplayHeader.innerText = "Computer Won!";
+  displayWinnerHeader.innerText = "Draw!";
 }
