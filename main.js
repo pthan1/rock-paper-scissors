@@ -134,7 +134,6 @@ function displayClassicPlayerSelections(array) {
   hide(classicModeView);
   show(playerSelectionsClassicModeView);
   for (var i = 0; i < array.length; i++) {
-
     if ((array[i] === newGame.humanPlayer.selection) && (newGame.computerPlayer.selection === newGame.humanPlayer.selection)) {
       playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
       <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
@@ -174,20 +173,34 @@ function displayDifficultPlayerSelections(array) {
   hide(difficultModeView);
   show(playerSelectionsDifficultModeView);
   for (var i = 0; i < array.length; i++) {
-    if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
+    if ((array[i] === newGame.humanPlayer.selection) && (newGame.computerPlayer.selection === newGame.humanPlayer.selection)) {
       playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
-      <button class="fighter-buttons-difficult" id="${array[i]}BtnDifficult">
-      <img class="fighter-icons-difficult" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
-    } 
-    if (array[i] === newGame.humanPlayer.selection && array[i] === newGame.computerPlayer.selection) {
-      playerSelectionsDifficultModeView.innerHTML = `
-        <h1>ROCK, PAPER, SCISSORS</h1>
-        <h2 class="winner-display-header">Choose Your Fighter!</h2>
-        <div class="fighter-icons-container-difficult"><button class="fighter-buttons-difficult" id="${newGame.humanPlayer.selection}BtnDifficult">
-        <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.humanPlayer.selection}.png" alt="${newGame.humanPlayer.selection} fighter">
-        <button class="fighter-buttons-difficult" id="${newGame.computerPlayer.selection}BtnDifficult">
-        <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.computerPlayer.selection}.png" alt="${newGame.computerPlayer.selection} fighter"></div>`;
+      <button class="fighter-buttons-classic" id="${array[i]}BtnDifficult">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">
+      <button class="fighter-buttons-classic" id="${array[i]}BtnDifficult">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+      console.log("THIS WORKS 1 ");
+    } else if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
+      playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
+      <button class="fighter-buttons-classic" id="${array[i]}BtnDifficult">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+      console.log("THIS WORKS 1 ");
     }
+
+    // if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
+    //   playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
+    //   <button class="fighter-buttons-difficult" id="${array[i]}BtnDifficult">
+    //   <img class="fighter-icons-difficult" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+    // } 
+    // if (array[i] === newGame.humanPlayer.selection && array[i] === newGame.computerPlayer.selection) {
+    //   playerSelectionsDifficultModeView.innerHTML = `
+    //     <h1>ROCK, PAPER, SCISSORS</h1>
+    //     <h2 class="winner-display-header">Choose Your Fighter!</h2>
+    //     <div class="fighter-icons-container-difficult"><button class="fighter-buttons-difficult" id="${newGame.humanPlayer.selection}BtnDifficult">
+    //     <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.humanPlayer.selection}.png" alt="${newGame.humanPlayer.selection} fighter">
+    //     <button class="fighter-buttons-difficult" id="${newGame.computerPlayer.selection}BtnDifficult">
+    //     <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.computerPlayer.selection}.png" alt="${newGame.computerPlayer.selection} fighter"></div>`;
+    // }
   }
 }
 
