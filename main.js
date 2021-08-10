@@ -16,6 +16,10 @@ var humanPlayer = new Player ("Human", "🚀");
 var computerPlayer = new Player ("Computer", "👾");
 var newGame = new Game();
 
+// Parsed Player Objects
+var humanPlayerObjectParsed;
+var computerPlayerObjectParsed;
+
 // Fighter arrays
 var classicFightersSelection = ["rock", "paper", "scissors"];
 var difficultFightersSelection = ["rock", "paper", "scissors", "alien", "ghost"];
