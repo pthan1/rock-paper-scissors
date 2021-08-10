@@ -17,6 +17,7 @@ class Player {
   takeTurn(fighterSelection) {
     this.selection = fighterSelection;
     computerPlayer.selection = classicFightersSelection[getRandomIndex(classicFightersSelection)];
+    newGame.checkForWinConditions();
   }
 
 }
