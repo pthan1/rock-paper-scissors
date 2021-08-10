@@ -16,9 +16,11 @@ class Game {
     hide(chooseYourGameView);
     if (type === "classic") {
       show(classicModeView);
+      show(gameRulesClassic)
     }
     if (type === "difficult") {
       show(difficultModeView);
+      show(gameRulesDifficult);
     }
   }
 
@@ -54,12 +56,11 @@ class Game {
     }
   }
 
-
   detectDraw() {
       console.log('draw', humanPlayer.selection, computerPlayer.selection);
       return 'Draw!';
     } 
-  
+
   resetBoard() {
     
   }
