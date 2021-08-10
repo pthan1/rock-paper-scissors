@@ -5,6 +5,9 @@ var difficultModeView = document.querySelector(".difficult-mode-view");
 var playerSelectionsClassicModeView = document.getElementById("player-selections-view-classic");
 var playerSelectionsDifficultModeView = document.getElementById("player-selections-view-difficult");
 
+var playerSelectionsIconContainerClassic = document.getElementById("player-selections-icon-container-classic");
+var playerSelectionsIconContainerDifficult = document.getElementById("player-selections-icon-container-difficult");
+
 var gameRulesClassic = document.querySelector(".game-rules-classic");
 var gameRulesDifficult = document.querySelector(".game-rules-difficult");
 
@@ -88,20 +91,20 @@ function displayClassicPlayerSelections(array) {
   show(playerSelectionsClassicModeView);
   for (var i = 0; i < array.length; i++) {
     if (array[i] === humanPlayer.selection || array[i] === computerPlayer.selection) {
-      playerSelectionsClassicModeView.insertAdjacentHTML("beforeend", `
+      playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
       <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
       <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+      console.log("THIS WORKS 1 ");
     }
     if (array[i] === humanPlayer.selection && array[i] === computerPlayer.selection) {
       playerSelectionsClassicModeView.innerHTML = `
-        <h1>ROCK, PAPER, SCISSORS</h1>
-        <h2>Choose Your Fighter!</h2>
-        <div class="fighter-icons-container-classic"></div>`;
-      playerSelectionsClassicModeView.insertAdjacentHTML("beforeend", `
-        <button class="fighter-buttons-classic" id="${humanPlayer.selection}BtnClassic">
-        <img class="fighter-icons-classic" src="../assets/black-and-white-${humanPlayer.selection}.png" alt="${humanPlayer.selection} fighter">
-        <button class="fighter-buttons-classic" id="${computerPlayer.selection}BtnClassic">
-        <img class="fighter-icons-classic" src="../assets/black-and-white-${computerPlayer.selection}.png" alt="${computerPlayer.selection} fighter">`)
+      <h1>ROCK, PAPER, SCISSORS</h1>
+      <h2>Choose Your Fighter!</h2>
+      <div class="fighter-icons-container-classic" id="player-selections-icon-container-classic">
+      <button class="fighter-buttons-classic" id="${humanPlayer.selection}BtnClassic">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${humanPlayer.selection}.png" alt="${humanPlayer.selection} fighter">
+      <button class="fighter-buttons-classic" id="${computerPlayer.selection}BtnClassic">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${computerPlayer.selection}.png" alt="${computerPlayer.selection} fighter"></div>`;
     }
   }
 }
@@ -111,7 +114,7 @@ function displayDifficultPlayerSelections(array) {
   show(playerSelectionsDifficultModeView);
   for (var i = 0; i < array.length; i++) {
     if (array[i] === humanPlayer.selection || array[i] === computerPlayer.selection) {
-      playerSelectionsDifficultModeView.insertAdjacentHTML("beforeend", `
+      playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
       <button class="fighter-buttons-difficult" id="${array[i]}BtnDifficult">
       <img class="fighter-icons-difficult" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
     } 
@@ -119,22 +122,10 @@ function displayDifficultPlayerSelections(array) {
       playerSelectionsDifficultModeView.innerHTML = `
         <h1>ROCK, PAPER, SCISSORS</h1>
         <h2>Choose Your Fighter!</h2>
-          <div class="fighter-icons-container-difficult"></div>`;
-      playerSelectionsDifficultModeView.insertAdjacentHTML("beforeend", `
-        <button class="fighter-buttons-difficult" id="${humanPlayer.selection}BtnDifficult">
+          <div class="fighter-icons-container-difficult"><button class="fighter-buttons-difficult" id="${humanPlayer.selection}BtnDifficult">
         <img class="fighter-icons-difficult" src="../assets/black-and-white-${humanPlayer.selection}.png" alt="${humanPlayer.selection} fighter">
         <button class="fighter-buttons-difficult" id="${computerPlayer.selection}BtnDifficult">
-        <img class="fighter-icons-difficult" src="../assets/black-and-white-${computerPlayer.selection}.png" alt="${computerPlayer.selection} fighter">`)
+        <img class="fighter-icons-difficult" src="../assets/black-and-white-${computerPlayer.selection}.png" alt="${computerPlayer.selection} fighter"></div>`;
     }
   }
 }
-
-
-// function displayDifficultPlayerSelections(array) {
-//   for (var i = 0; i < array.length; i++) {
-//     if (array[i] === humanPlayer.selection || array[i] === computerPlayer.selection) {
-//       playerSelectionsDifficultModeView.insertAdjacentHTML("beforeend", `
-//     <img class="fighter-icons-difficult" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
-//     }
-//   }
-// }
