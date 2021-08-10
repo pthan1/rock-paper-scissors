@@ -11,6 +11,13 @@ var rockBtnClassic = document.getElementById("rockBtnClassic");
 var paperBtnClassic = document.getElementById("paperBtnClassic");
 var scissorsBtnClassic = document.getElementById("scissorsBtnClassic");
 
+//Difficult Mode Fighter Icons
+var rockBtnDifficult = document.getElementById("rockBtnDifficult");
+var paperBtnDifficult = document.getElementById("paperBtnDifficult");
+var scissorsBtnDifficult = document.getElementById("scissorsBtnDifficult");
+var alienBtnDifficult = document.getElementById("alienBtnDifficult");
+var ghostBtnDifficult = document.getElementById("ghostBtnDifficult");
+
 // Instantiating Player and Game Classes on (Load?)
 var humanPlayer = new Player ("Human", "🚀");
 var computerPlayer = new Player ("Computer", "👾");
