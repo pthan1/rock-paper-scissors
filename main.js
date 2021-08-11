@@ -105,7 +105,7 @@ ghostBtnDifficult.addEventListener("click", function () {
   playGame("ghost");
 });
 
-// displayWinCounterData();
+displayWinCounterData();
 
 function playGame(fighter) {
   
@@ -114,7 +114,7 @@ function playGame(fighter) {
   if (!classicModeView.classList.contains("hidden")) {
   displayClassicPlayerSelections(classicFightersSelection);
   displayWinner();
-  // displayWinCounterData();
+  displayWinCounterData();
   timeGameBoardClassic();
 
   }
@@ -122,7 +122,7 @@ function playGame(fighter) {
   if (!difficultModeView.classList.contains("hidden")) {
   displayDifficultPlayerSelections(difficultFightersSelection);
   displayWinnerDifficult();
-  // displayWinCounterData()
+  displayWinCounterData()
   timeGameBoardDifficult();
   
   }
@@ -223,12 +223,13 @@ function displayWinnerDifficult() {
   winnerDisplayHeaderDifficult.innerText = newGame.checkForWinConditions();
 }
 
-// function displayWinCounterData() {
-//     humanPlayerWinsCounter.innerText = `WINS: ${humanPlayerObjectParsed.wins}`;
-//     computerPlayerWinsCounter.innerText = `WINS: ${computerPlayerObjectParsed.wins}`;
-//     console.log("displayWinCounter fxn works!");
+function displayWinCounterData() {
+     newGame.humanPlayer.retrieveWinsFromStorage();
+    humanPlayerWinsCounter.innerText = `WINS: ${humanPlayerObjectParsed.wins}`;
+    computerPlayerWinsCounter.innerText = `WINS: ${computerPlayerObjectParsed.wins}`;
+    console.log("displayWinCounter fxn works!");
   
-// }
+}
 
 function timeGameBoardClassic() {
   setTimeout(showGameBoardAfterGameClassic, 1000);
@@ -249,3 +250,4 @@ function showGameBoardAfterGameDifficult() {
   show(difficultModeView);
   hide(playerSelectionsDifficultModeView);
 }
+
