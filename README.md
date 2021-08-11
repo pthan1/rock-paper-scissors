@@ -51,17 +51,20 @@ The application consists of a single HTML page and three JavaScript files.
 Click [here](./assets/gameplay.gif) for gameplay illustration.
 
 ## Install + Setup
-Open the index.html in your brower to run and play the game.
+- Play the app [here](https://pthan1.github.io/rock-paper-scissors/).
+OR
+- Open the index.html in your brower to run and play the game.
 
 ## Contributors
   - [Phil Than](https://github.com/pthan1)
   - [Jeremiah Black](https://github.com/jeremiahblackol)
 
 ## Wins
-- Developed a working CSS "casino" theme.
+- Created a working CSS "casino" theme.
 - Refactoring the code to remove any DOM manipulation from classes
-- Debugged win counter
-- Fixing issue of timer not resetting when first result was a Draw
+- Fixing 2 issues on time:
+	- Debugged win counter
+	- Fixing issue of timer not resetting when first result was a Draw
 
 ## Challenges + Improvements
 - Challenges: It was difficult to follow the suggested iterations and to create the classes first.  
