@@ -200,6 +200,18 @@ h3 {
 	border: none;
 }
 
+.choose-your-game-buttons-container {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.choose-your-game-buttons {
+	width: 40%;
+}
+
 .hidden {
 	display: none;
 }
