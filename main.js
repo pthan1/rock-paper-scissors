@@ -5,6 +5,9 @@ var difficultModeView = document.querySelector(".difficult-mode-view");
 var playerSelectionsClassicModeView = document.getElementById("player-selections-view-classic");
 var playerSelectionsDifficultModeView = document.getElementById("player-selections-view-difficult");
 
+var humanToken = document.querySelector(".human-name");
+var computerToken = document.querySelector(".computer-name");
+
 var humanPlayerWinsCounter = document.querySelector(".wins-counter-classic");
 var computerPlayerWinsCounter = document.querySelector(".wins-counter-difficult");
 
@@ -23,13 +26,11 @@ var difficultModeBtn = document.getElementById("difficultModeBtn");
 
 var changeGameBtn = document.querySelector(".change-game-button");
 
-// Classic Mode Fighter Icons
 var allClassicFighterBtns = document.querySelectorAll(".fighter-buttons-classic");
 var rockBtnClassic = document.getElementById("rockBtnClassic");
 var paperBtnClassic = document.getElementById("paperBtnClassic");
 var scissorsBtnClassic = document.getElementById("scissorsBtnClassic");
 
-//Difficult Mode Fighter Icons
 var allDifficultFighterBtns = document.querySelectorAll(".fighter-buttons-difficult");
 var rockBtnDifficult = document.getElementById("rockBtnDifficult");
 var paperBtnDifficult = document.getElementById("paperBtnDifficult");
@@ -37,25 +38,19 @@ var scissorsBtnDifficult = document.getElementById("scissorsBtnDifficult");
 var alienBtnDifficult = document.getElementById("alienBtnDifficult");
 var ghostBtnDifficult = document.getElementById("ghostBtnDifficult");
 
-// InstantiatingGame Class on Load
-
 var newGame = new Game();
 
-// Parsed Player Objects
 var humanPlayerObjectParsed;
 var computerPlayerObjectParsed;
 
-// Fighter arrays
 var classicFightersSelection = ["rock", "paper", "scissors"];
 var difficultFightersSelection = ["rock", "paper", "scissors", "alien", "ghost"];
 
-//Event Listeners for Game Mode Selection Buttons
 classicModeBtn.addEventListener("click", function() {newGame.selectGameType("classic")});
 difficultModeBtn.addEventListener("click", function() {newGame.selectGameType("difficult")});
 
 changeGameBtn.addEventListener("click", loadChooseGameView);
 
-//Event Listeners for Fighter Icons
 rockBtnClassic.addEventListener("click", function () {
   playGame("rock");
 });
@@ -65,7 +60,6 @@ paperBtnClassic.addEventListener("click", function () {
 scissorsBtnClassic.addEventListener("click", function () {
   playGame("scissors");
 });
-//Event Listeners for Difficult Icons
 rockBtnDifficult.addEventListener("click", function () {
   playGame("rock");
 });
@@ -82,29 +76,20 @@ ghostBtnDifficult.addEventListener("click", function () {
   playGame("ghost");
 });
 
-displayWinCounterData();
-
 function playGame(fighter) {
-  
   newGame.humanPlayer.takeTurn(fighter);
-
   if (!classicModeView.classList.contains("hidden")) {
   displayClassicPlayerSelections(classicFightersSelection);
   displayWinner();
   displayWinCounterData();
   timeGameBoardClassic();
-
   }
-
   if (!difficultModeView.classList.contains("hidden")) {
   displayDifficultPlayerSelections(difficultFightersSelection);
   displayWinnerDifficult();
   displayWinCounterData()
   timeGameBoardDifficult();
-  
   }
-
-  console.log('console log in playGame fxn');
 };
 
 function show(element) {
@@ -139,7 +124,6 @@ function displayClassicPlayerSelections(array) {
   }
 }
 
-
 function displayDifficultPlayerSelections(array) {
   hide(difficultModeView);
   show(playerSelectionsDifficultModeView);
@@ -163,16 +147,18 @@ function displayDifficultPlayerSelections(array) {
 function displayWinner() {
   winnerDisplayHeader.innerText = newGame.checkForWinConditions();
 }
+
 function displayWinnerDifficult() {
   winnerDisplayHeaderDifficult.innerText = newGame.checkForWinConditions();
 }
 
 function displayWinCounterData() {
-     newGame.humanPlayer.retrieveWinsFromStorage();
+    if (localStorage.getItem("humanPlayerData")) {
+    newGame.humanPlayer.retrieveWinsFromStorage();
     humanPlayerWinsCounter.innerText = `WINS: ${humanPlayerObjectParsed.wins}`;
     computerPlayerWinsCounter.innerText = `WINS: ${computerPlayerObjectParsed.wins}`;
     console.log("displayWinCounter fxn works!");
-  
+    }
 }
 
 function timeGameBoardClassic() {
@@ -202,3 +188,5 @@ function loadChooseGameView() {
   hide(gameRulesDifficult);
   show(chooseYourGameView);
 }
+
+displayWinCounterData();
