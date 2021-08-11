@@ -1,5 +1,3 @@
-// var Player = require("./player.js");
-
 class Game {
   constructor() {
     this.humanPlayer = new Player("Human", "🚀");
@@ -10,6 +8,7 @@ class Game {
     if (winner === "humanPlayer") {
       this.humanPlayer.wins += 1;
       this.humanPlayer.saveWinsToStorage();
+      console.log('trackGameData');
     }
     if (winner === "computerPlayer") {
       this.computerPlayer.wins += 1;
@@ -42,7 +41,6 @@ class Game {
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "paper") ||
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "alien")) {
         this.trackGameData("humanPlayer");
-        console.log('human wins', 'human:', this.humanPlayer.selection, 'computer: ', this.computerPlayer.selection);
         return `${this.humanPlayer.name} wins!`;
     } else if (
       (this.humanPlayer.selection === "rock" && this.computerPlayer.selection === "paper") ||
@@ -56,11 +54,10 @@ class Game {
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "rock") ||
       (this.humanPlayer.selection === "ghost" && this.computerPlayer.selection === "scissors")) {
       this.trackGameData("computerPlayer");
-      console.log('Computer wins', 'human:', this.humanPlayer.selection, 'computer: ', this.computerPlayer.selection);
       return `${this.computerPlayer.name} wins!`;
     } else {
       this.detectDraw();
-      return 'Draw';
+      return 'Draw!';
     }
   }
 
@@ -70,6 +67,6 @@ class Game {
     } 
 
   resetBoard() {
-    
+    newGame = new Game();
   }
 }
