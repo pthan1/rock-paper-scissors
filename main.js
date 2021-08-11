@@ -21,6 +21,8 @@ var chooseYourGameBtns = document.querySelector(".choose-your-game-buttons");
 var classicModeBtn = document.getElementById("classicModeBtn");
 var difficultModeBtn = document.getElementById("difficultModeBtn");
 
+var changeGameBtn = document.querySelector(".change-game-button");
+
 // Classic Mode Fighter Icons
 var allClassicFighterBtns = document.querySelectorAll(".fighter-buttons-classic");
 var rockBtnClassic = document.getElementById("rockBtnClassic");
@@ -51,32 +53,7 @@ var difficultFightersSelection = ["rock", "paper", "scissors", "alien", "ghost"]
 classicModeBtn.addEventListener("click", function() {newGame.selectGameType("classic")});
 difficultModeBtn.addEventListener("click", function() {newGame.selectGameType("difficult")});
 
-// //Event Listeners for Fighter Icons
-// rockBtnClassic.addEventListener("click", function() {
-//   newGame.humanPlayer.takeTurn("rock");
-// });
-// paperBtnClassic.addEventListener("click", function() {
-//   newGame.humanPlayer.takeTurn("paper");
-// });
-// scissorsBtnClassic.addEventListener("click", function() {
-//   newGame.humanPlayer.takeTurn("scissors");
-// });
-// //Event Listeners for Difficult Icons
-// rockBtnDifficult.addEventListener("click", function () {
-//   newGame.humanPlayer.takeTurn("rock")
-// });
-// paperBtnDifficult.addEventListener("click", function () {
-//   newGame.humanPlayer.takeTurn("paper")
-// });
-// scissorsBtnDifficult.addEventListener("click", function () {
-//   newGame.humanPlayer.takeTurn("scissors")
-// });
-// alienBtnDifficult.addEventListener("click", function () {
-//   newGame.humanPlayer.takeTurn("alien")
-// });
-// ghostBtnDifficult.addEventListener("click", function () {
-//   newGame.humanPlayer.takeTurn("ghost")
-// });
+changeGameBtn.addEventListener("click", loadChooseGameView);
 
 //Event Listeners for Fighter Icons
 rockBtnClassic.addEventListener("click", function () {
@@ -159,24 +136,6 @@ function displayClassicPlayerSelections(array) {
       <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
       console.log("THIS WORKS 1 ");
     }
-
-      
-    // if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
-    //   playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
-    //   <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
-    //   <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
-    //   console.log("THIS WORKS 1 ");
-    // }
-    // if (array[i] === newGame.humanPlayer.selection && array[i] === newGame.computerPlayer.selection) {
-    //   playerSelectionsClassicModeView.innerHTML = `
-    //   <h1>ROCK, PAPER, SCISSORS</h1>
-    //   <h2 class="winner-display-header">Choose Your Fighter!</h2>
-    //   <div class="fighter-icons-container-classic" id="player-selections-icon-container-classic">
-    //   <button class="fighter-buttons-classic" id="${newGame.humanPlayer.selection}BtnClassic">
-    //   <img class="fighter-icons-classic" src="../assets/black-and-white-${newGame.humanPlayer.selection}.png" alt="${newGame.humanPlayer.selection} fighter">
-    //   <button class="fighter-buttons-classic" id="${newGame.computerPlayer.selection}BtnClassic">
-    //   <img class="fighter-icons-classic" src="../assets/black-and-white-${newGame.computerPlayer.selection}.png" alt="${newGame.computerPlayer.selection} fighter"></div>`;
-    // }
   }
 }
 
@@ -198,21 +157,6 @@ function displayDifficultPlayerSelections(array) {
       <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
       console.log("THIS WORKS 1 ");
     }
-
-    // if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
-    //   playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
-    //   <button class="fighter-buttons-difficult" id="${array[i]}BtnDifficult">
-    //   <img class="fighter-icons-difficult" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
-    // } 
-    // if (array[i] === newGame.humanPlayer.selection && array[i] === newGame.computerPlayer.selection) {
-    //   playerSelectionsDifficultModeView.innerHTML = `
-    //     <h1>ROCK, PAPER, SCISSORS</h1>
-    //     <h2 class="winner-display-header">Choose Your Fighter!</h2>
-    //     <div class="fighter-icons-container-difficult"><button class="fighter-buttons-difficult" id="${newGame.humanPlayer.selection}BtnDifficult">
-    //     <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.humanPlayer.selection}.png" alt="${newGame.humanPlayer.selection} fighter">
-    //     <button class="fighter-buttons-difficult" id="${newGame.computerPlayer.selection}BtnDifficult">
-    //     <img class="fighter-icons-difficult" src="../assets/black-and-white-${newGame.computerPlayer.selection}.png" alt="${newGame.computerPlayer.selection} fighter"></div>`;
-    // }
   }
 }
 
@@ -251,3 +195,10 @@ function showGameBoardAfterGameDifficult() {
   hide(playerSelectionsDifficultModeView);
 }
 
+function loadChooseGameView() {
+  hide(classicModeView);
+  hide(difficultModeView);
+  hide(gameRulesClassic);
+  hide(gameRulesDifficult);
+  show(chooseYourGameView);
+}
