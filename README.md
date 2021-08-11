@@ -58,18 +58,18 @@ Open the index.html in your brower to run and play the game.
   - [Jeremiah Black](https://github.com/jeremiahblackol)
 
 ## Wins
-	- Developed a working CSS "casino" theme.
-	- Refactoring the code to remove any DOM manipulation from classes
-  - Fixing win counter
-  - Fixing issue of timer not resetting when first result was a Draw
+- Developed a working CSS "casino" theme.
+- Refactoring the code to remove any DOM manipulation from classes
+- Debugged win counter
+- Fixing issue of timer not resetting when first result was a Draw
 
 ## Challenges + Improvements
-	- Challenges: It was difficult to follow the suggested iterations and to create the classes first.  
-  - Improvements: Next time, I will work on creating the classes first then work on the main JS file.
-	- Bugs: None
-	- Future Iterations:
-    - Create a "Casino-like" experience by holding and showing fighter icons as cards as in a casino table game.
-    - Add a "Reset Score" button to reset the score on click.
+- Challenges: It was difficult to follow the suggested iterations and to create the classes first.  
+- Improvements: Next time, I will work on creating the classes first then work on the main JS file.
+- Bugs: None
+- Future Iterations:
+   - Create a "Casino-like" experience by holding and showing fighter icons as cards as in a casino table game.
+   - Add a "Reset Score" button to reset the score on click.
 
 
 ## Project Specs
