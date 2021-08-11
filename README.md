@@ -49,7 +49,7 @@ The application consists of a single HTML page and three JavaScript files.
 
 
 ## Illustrations
-<img src="https://user-images.githubusercontent.com/82873669/129105634-c33175f6-06e2-434c-9f9c-cbc58db123a8.gif" width="600"/>
+<img src="https://user-images.githubusercontent.com/82873669/129105634-c33175f6-06e2-434c-9f9c-cbc58db123a8.gif" width="700"/>
 
 ## Install + Setup
 - Play the app [here](https://pthan1.github.io/rock-paper-scissors/).
