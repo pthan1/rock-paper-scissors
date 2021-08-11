@@ -5,6 +5,9 @@ var difficultModeView = document.querySelector(".difficult-mode-view");
 var playerSelectionsClassicModeView = document.getElementById("player-selections-view-classic");
 var playerSelectionsDifficultModeView = document.getElementById("player-selections-view-difficult");
 
+var humanPlayerWinsCounter = document.querySelector(".wins-counter-classic");
+var computerPlayerWinsCounter = document.querySelector(".wins-counter-difficult");
+
 var playerSelectionsIconContainerClassic = document.getElementById("player-selections-icon-container-classic");
 var playerSelectionsIconContainerDifficult = document.getElementById("player-selections-icon-container-difficult");
 
@@ -102,7 +105,7 @@ ghostBtnDifficult.addEventListener("click", function () {
   playGame("ghost");
 });
 
-
+// displayWinCounterData();
 
 function playGame(fighter) {
   
@@ -111,11 +114,17 @@ function playGame(fighter) {
   if (!classicModeView.classList.contains("hidden")) {
   displayClassicPlayerSelections(classicFightersSelection);
   displayWinner();
+  // displayWinCounterData();
+  timeGameBoardClassic();
+
   }
 
   if (!difficultModeView.classList.contains("hidden")) {
   displayDifficultPlayerSelections(difficultFightersSelection);
   displayWinnerDifficult();
+  // displayWinCounterData()
+  timeGameBoardDifficult();
+  
   }
 
   console.log('console log in playGame fxn');
@@ -214,3 +223,29 @@ function displayWinnerDifficult() {
   winnerDisplayHeaderDifficult.innerText = newGame.checkForWinConditions();
 }
 
+// function displayWinCounterData() {
+//     humanPlayerWinsCounter.innerText = `WINS: ${humanPlayerObjectParsed.wins}`;
+//     computerPlayerWinsCounter.innerText = `WINS: ${computerPlayerObjectParsed.wins}`;
+//     console.log("displayWinCounter fxn works!");
+  
+// }
+
+function timeGameBoardClassic() {
+  setTimeout(showGameBoardAfterGameClassic, 1000);
+}
+
+function showGameBoardAfterGameClassic() {
+  playerSelectionsIconContainerClassic.innerHTML = "";
+  show(classicModeView);
+  hide(playerSelectionsClassicModeView);
+}
+
+function timeGameBoardDifficult() {
+  setTimeout(showGameBoardAfterGameDifficult, 1000);
+}
+
+function showGameBoardAfterGameDifficult() {
+  playerSelectionsIconContainerDifficult.innerHTML = "";
+  show(difficultModeView);
+  hide(playerSelectionsDifficultModeView);
+}
