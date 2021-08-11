@@ -12,87 +12,108 @@
   <section class="main">
     <section class="left-section">
       <div class="player-stats" id="human-stats">
-        <h2 class="red-text">HUMAN</h2>
+        <h2 class="human-name red-text">
+          HUMAN<br>
+          🚀
+        </h2>
       </div>
-      <div class="wins"><h3>WINS:</h3>
+      <div class="human-wins wins">
+        <h3 class="wins-counter-classic">WINS: 0</h3>
+        <button class="change-game-button">Change Game</button>
       </div>
     </section>
     <section class="center-section">
       <section class="choose-your-game-view">
         <h1>ROCK, PAPER, SCISSORS</h1>
         <h2>Choose Your Game!</h2>
-        <button class="choose-your-game-buttons" id="classicModeBtn">
-          <h3>🪨CLASSIC✂️</h3>
-          rock > scissors <br>
-          paper > rock <br>
-          scissors > paper <br>
+        <div class="choose-your-game-buttons-container">
+          <button class="choose-your-game-buttons" id="classicModeBtn">
+            <h3>🪨CLASSIC✂️</h3>
+            rock > scissors <br>
+            paper > rock <br>
+            scissors > paper <br>
           </button>
-        <button class="choose-your-game-buttons" id="difficultModeBtn">
-          <h3>👽DIFFICULT👻</h3>
-          rock > scissors & ghost<br>
-          paper > rock & alien<br>
-          scissors > paper & ghost<br>
-          alien > scissors & rock<br>
-          ghost > paper & alien<br>
-        </button>
+          <button class="choose-your-game-buttons" id="difficultModeBtn">
+            <h3>👽DIFFICULT👻</h3>
+            rock > scissors & ghost<br>
+            paper > rock & alien<br>
+            scissors > paper & ghost<br>
+            alien > scissors & rock<br>
+            ghost > paper & alien<br>
+          </button>
+        </div>
       </section>
-      <section class="classic-mode-view hidden">
+      <section class="classic-mode-view hidden" id="main-board-classic">
         <h1>ROCK, PAPER, SCISSORS</h1>
         <h2>Choose Your Fighter!</h2>
         <div class="fighter-icons-container-classic">
-          <button class="fighter-buttons" id="rockBtnClassic">
-            <img class="fighter-icons-classic" src="../assets/black-and-white-rocks.png" alt="rock fighter">
+          <button class="fighter-buttons-classic" id="rockBtnClassic">
+            <img class="fighter-icons-classic" src="../assets/black-and-white-rock.png" alt="rock fighter">
           </button>
-          <button class="fighter-buttons" id="paperBtnClassic">
+          <button class="fighter-buttons-classic" id="paperBtnClassic">
             <img class="fighter-icons-classic" src="../assets/black-and-white-paper.png" alt="paper fighter">
           </button>
-          <button class="fighter-buttons" id="scissorsBtnClassic">
+          <button class="fighter-buttons-classic" id="scissorsBtnClassic">
             <img class="fighter-icons-classic" src="../assets/black-and-white-scissors.png" alt="scissors fighter">
           </button>
         </div>
-        <section class="game-rules-classic">
+      </section>
+      <section class="classic-mode-player-selection-view hidden" id="player-selections-view-classic">
+        <h1>ROCK, PAPER, SCISSORS</h1>
+        <h2 class="winner-display-header">Choose Your Fighter!</h2>
+        <div class="fighter-icons-container-classic" id="player-selections-icon-container-classic"></div>
+      </section>
+        <section class="game-rules-classic hidden">
           GAME RULES: <br>
           ROCK SMASHES SCISSORS<br>
-          SCISSORS CUTS PAPER<br>
-          PAPER COVERS ROCK
+          PAPER COVERS ROCK<br>
+          SCISSORS CUTS PAPER
         </section>
-      </section>
-    <section class="difficult-mode-view hidden">
-      <h1>ROCK, PAPER, SCISSORS</h1>
-      <h2>Choose Your Fighter! (DIFFICULT)</h2>
-      <div class="fighter-icons-container-difficult">
-        <button class="fighter-buttons" id="rockBtnDifficult">
-          <img class="fighter-icons-difficult" src="../assets/black-and-white-rocks.png" alt="rock fighter">
-        </button>
-        <button class="fighter-buttons" id="paperBtnDifficult">
-          <img class="fighter-icons-difficult" src="../assets/black-and-white-paper.png" alt="paper fighter">
-        </button>
-        <button class="fighter-buttons" id="scissorsBtnDifficult">
-          <img class="fighter-icons-difficult" src="../assets/black-and-white-scissors.png" alt="scissors fighter">
-        </button>
-        <button class="fighter-buttons" id="alienBtnDifficult">
-          <img class="fighter-icons-difficult" src="../assets/black-and-white-alien.png" alt="alien fighter">
-        </button>
-        <button class="fighter-buttons" id="ghostBtnDifficult">
-          <img class="fighter-icons-difficult" src="../assets/black-and-white-ghost.png" alt="ghost fighter">
-        </button>
-      </div>
-      <section class="game-rules-difficult">
-        GAME RULES: <br>
-        ROCK SMASHES SCISSORS<br>
-        SCISSORS CUTS PAPER<br>
-        PAPER COVERS ROCK<br>
-        LOGIC<br>
-        LOGIC
-      </section>
+              
+        <section class="difficult-mode-view hidden" id="main-board-difficult">
+          <h1>ROCK, PAPER, SCISSORS</h1>
+          <h2>Choose Your Fighter! (DIFFICULT)</h2>
+          <div class="fighter-icons-container-difficult">
+            <button class="fighter-buttons-difficult" id="rockBtnDifficult">
+              <img class="fighter-icons-difficult" src="../assets/black-and-white-rock.png" alt="rock fighter">
+            </button>
+            <button class="fighter-buttons-difficult" id="paperBtnDifficult">
+              <img class="fighter-icons-difficult" src="../assets/black-and-white-paper.png" alt="paper fighter">
+            </button>
+            <button class="fighter-buttons-difficult" id="scissorsBtnDifficult">
+              <img class="fighter-icons-difficult" src="../assets/black-and-white-scissors.png" alt="scissors fighter">
+            </button>
+            <button class="fighter-buttons-difficult" id="alienBtnDifficult">
+              <img class="fighter-icons-difficult" src="../assets/black-and-white-alien.png" alt="alien fighter">
+            </button>
+            <button class="fighter-buttons-difficult" id="ghostBtnDifficult">
+              <img class="fighter-icons-difficult" src="../assets/black-and-white-ghost.png" alt="ghost fighter">
+            </button>
+          </div>
+        </section>
+        <section class="difficult-mode-player-selection-view hidden" id="player-selections-view-difficult">
+          <h1>ROCK, PAPER, SCISSORS</h1>
+          <h2 class="winner-display-header-difficult">Choose Your Fighter!dsfaf</h2>
+          <div class="fighter-icons-container-difficult" id="player-selections-icon-container-difficult"></div>
+        </section>
+    <section class="game-rules-difficult hidden">
+      GAME RULES:<br>
+      ROCK SMASHES SCISSORS & GHOST<br>
+      PAPER COVERS ROCK & ALIEN<br>
+      SCISSORS CUTS PAPER & GHOST<br>
+      ALIEN ABDUCTS SCISSORS & ROCK<br>
+      GHOST SPOOKS PAPER & ALIEN<br>
     </section>
     </section>
     <section class="right-section">
-      <div class="player-stats" id="human-stats">
-        <h2 class="black-text">COMPUTER</h2>
+      <div class="player-stats" id="computer-stats">
+        <h2 class="computer-name black-text">
+          COMPUTER <br>
+          👾
+        </h2>
       </div>  
-      <div class="wins">
-        <h3>WINS: </h3>
+      <div class="computer-wins wins">
+        <h3 class="wins-counter-difficult">WINS: 0</h3>
       </div>
     </section>
   </section>

@@ -7,11 +7,10 @@ class Player {
   }
 
   saveWinsToStorage() {
-    var stringifiedHumanObject = JSON.stringify(humanPlayer);
-    var stringifiedComputerObject = JSON.stringify(computerPlayer);
+    var stringifiedHumanObject = JSON.stringify(newGame.humanPlayer);
+    var stringifiedComputerObject = JSON.stringify(newGame.computerPlayer);
     localStorage.setItem("humanPlayerData", stringifiedHumanObject);
     localStorage.setItem("computerPlayerData", stringifiedComputerObject);
-    this.retrieveWinsFromStorage();
   }
 
   retrieveWinsFromStorage() {
@@ -23,16 +22,14 @@ class Player {
   
   takeTurn(fighterSelection) {
     this.selection = fighterSelection;
-  
     if (!classicModeView.classList.contains("hidden")) {
-      computerPlayer.selection = classicFightersSelection[getRandomIndex(classicFightersSelection)];
-      console.log('classic Mode');
+      newGame.computerPlayer.selection = classicFightersSelection[getRandomIndex(classicFightersSelection)];
+      return;
     }
     if (!difficultModeView.classList.contains("hidden")) {
-      computerPlayer.selection = difficultFightersSelection[getRandomIndex(difficultFightersSelection)];
-      console.log('this works');
+      newGame.computerPlayer.selection = difficultFightersSelection[getRandomIndex(difficultFightersSelection)];
+      return;
     }
     newGame.checkForWinConditions();
   }
-
 }
