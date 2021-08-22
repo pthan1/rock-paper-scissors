@@ -107,22 +107,40 @@ function getRandomIndex(array) {
 function displayClassicPlayerSelections(array) {
   hide(classicModeView);
   show(playerSelectionsClassicModeView);
-  for (var i = 0; i < array.length; i++) {
-    if ((array[i] === newGame.humanPlayer.selection) && (newGame.computerPlayer.selection === newGame.humanPlayer.selection)) {
+
+  array.forEach((element) => {
+      if ((element === newGame.humanPlayer.selection) && (newGame.computerPlayer.selection === newGame.humanPlayer.selection)) {
       playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
+      <button class="fighter-buttons-classic" id="${element}BtnClassic">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${element}.png" alt="${element} fighter">
       <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
-      <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">
-      <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
-      <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${element}.png" alt="${element} fighter">`)
       console.log("THIS WORKS 1 ");
-    } else if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
+      } else if (element === newGame.humanPlayer.selection || element === newGame.computerPlayer.selection) {
       playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
-      <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
-      <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+      <button class="fighter-buttons-classic" id="${element}BtnClassic">
+      <img class="fighter-icons-classic" src="../assets/black-and-white-${element}.png" alt="${element} fighter">`)
       console.log("THIS WORKS 1 ");
     }
+  })
+
+
+  // for (var i = 0; i < array.length; i++) {
+    // if ((array[i] === newGame.humanPlayer.selection) && (newGame.computerPlayer.selection === newGame.humanPlayer.selection)) {
+    //   playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
+    //   <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
+    //   <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">
+    //   <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
+    //   <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+    //   console.log("THIS WORKS 1 ");
+    // } else if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
+    //   playerSelectionsIconContainerClassic.insertAdjacentHTML("beforeend", `
+    //   <button class="fighter-buttons-classic" id="${array[i]}BtnClassic">
+    //   <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
+    //   console.log("THIS WORKS 1 ");
+    // }
   }
-}
+
 
 function displayDifficultPlayerSelections(array) {
   hide(difficultModeView);
@@ -162,7 +180,7 @@ function displayWinCounterData() {
 }
 
 function timeGameBoardClassic() {
-  setTimeout(showGameBoardAfterGameClassic, 1000);
+  setTimeout(showGameBoardAfterGameClassic, 3000);
 }
 
 function showGameBoardAfterGameClassic() {
@@ -172,7 +190,7 @@ function showGameBoardAfterGameClassic() {
 }
 
 function timeGameBoardDifficult() {
-  setTimeout(showGameBoardAfterGameDifficult, 1000);
+  setTimeout(showGameBoardAfterGameDifficult, 3000);
 }
 
 function showGameBoardAfterGameDifficult() {
