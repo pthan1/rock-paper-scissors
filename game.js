@@ -8,8 +8,8 @@ class Game {
     if (winner === "humanPlayer") {
       this.humanPlayer.wins += 1;
       this.humanPlayer.saveWinsToStorage();
-      console.log('trackGameData');
     }
+    
     if (winner === "computerPlayer") {
       this.computerPlayer.wins += 1;
       this.computerPlayer.saveWinsToStorage();
@@ -18,14 +18,25 @@ class Game {
 
   selectGameType(type) {
     hide(chooseYourGameView);
-    if (type === "classic") {
-      show(classicModeView);
-      show(gameRulesClassic)
+    
+    switch(type) {
+      case "classic":
+        show(classicModeView);
+        show(gameRulesClassic);
+        break;
+      case "difficult":
+        show(difficultModeView);
+        show(gameRulesDifficult);
     }
-    if (type === "difficult") {
-      show(difficultModeView);
-      show(gameRulesDifficult);
-    }
+    
+    // if (type === "classic") {
+    //   show(classicModeView);
+    //   show(gameRulesClassic);
+    // }
+    // if (type === "difficult") {
+    //   show(difficultModeView);
+    //   show(gameRulesDifficult);
+    // }
   }
 
   checkForWinConditions() {
@@ -62,7 +73,6 @@ class Game {
   }
 
   detectDraw() {
-      console.log('draw', this.humanPlayer.selection, this.computerPlayer.selection);
       return 'Draw!';
     } 
 
