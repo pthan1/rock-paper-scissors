@@ -5,14 +5,16 @@ class Game {
   }
 
   trackGameData(winner) {
-    if (winner === "humanPlayer") {
-      this.humanPlayer.wins += 1;
-      this.humanPlayer.saveWinsToStorage();
-    }
-    
-    if (winner === "computerPlayer") {
-      this.computerPlayer.wins += 1;
-      this.computerPlayer.saveWinsToStorage();
+
+    switch(winner) {
+      case "humanPlayer":
+        this.humanPlayer.wins += 1;
+        this.humanPlayer.saveWinsToStorage();
+        break;
+      case "computerPlayer":
+        this.computerPlayer.wins += 1;
+        this.computerPlayer.saveWinsToStorage();
+        break;
     }
   }
 
@@ -27,16 +29,8 @@ class Game {
       case "difficult":
         show(difficultModeView);
         show(gameRulesDifficult);
+        break;
     }
-    
-    // if (type === "classic") {
-    //   show(classicModeView);
-    //   show(gameRulesClassic);
-    // }
-    // if (type === "difficult") {
-    //   show(difficultModeView);
-    //   show(gameRulesDifficult);
-    // }
   }
 
   checkForWinConditions() {
