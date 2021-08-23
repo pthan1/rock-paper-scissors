@@ -135,12 +135,10 @@ function displayDifficultPlayerSelections(array) {
       <img class="fighter-icons-classic" src="../assets/black-and-white-${element}.png" alt="${element} fighter">
       <button class="fighter-buttons-classic" id="${element}BtnDifficult">
       <img class="fighter-icons-classic" src="../assets/black-and-white-${element}.png" alt="${element} fighter">`)
-      console.log("THIS WORKS 1 ");
     } else if (element === newGame.humanPlayer.selection || element === newGame.computerPlayer.selection) {
       playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
       <button class="fighter-buttons-classic" id="${element}BtnDifficult">
       <img class="fighter-icons-classic" src="../assets/black-and-white-${element}.png" alt="${element} fighter">`)
-      console.log("THIS WORKS 1 ");
     }
   })
   }
