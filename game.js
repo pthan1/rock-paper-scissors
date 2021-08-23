@@ -5,26 +5,31 @@ class Game {
   }
 
   trackGameData(winner) {
-    if (winner === "humanPlayer") {
-      this.humanPlayer.wins += 1;
-      this.humanPlayer.saveWinsToStorage();
-      console.log('trackGameData');
-    }
-    if (winner === "computerPlayer") {
-      this.computerPlayer.wins += 1;
-      this.computerPlayer.saveWinsToStorage();
+
+    switch(winner) {
+      case "humanPlayer":
+        this.humanPlayer.wins += 1;
+        this.humanPlayer.saveWinsToStorage();
+        break;
+      case "computerPlayer":
+        this.computerPlayer.wins += 1;
+        this.computerPlayer.saveWinsToStorage();
+        break;
     }
   }
 
   selectGameType(type) {
     hide(chooseYourGameView);
-    if (type === "classic") {
-      show(classicModeView);
-      show(gameRulesClassic)
-    }
-    if (type === "difficult") {
-      show(difficultModeView);
-      show(gameRulesDifficult);
+    
+    switch(type) {
+      case "classic":
+        show(classicModeView);
+        show(gameRulesClassic);
+        break;
+      case "difficult":
+        show(difficultModeView);
+        show(gameRulesDifficult);
+        break;
     }
   }
 
@@ -62,7 +67,6 @@ class Game {
   }
 
   detectDraw() {
-      console.log('draw', this.humanPlayer.selection, this.computerPlayer.selection);
       return 'Draw!';
     } 
 
