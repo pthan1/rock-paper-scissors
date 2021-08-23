@@ -134,12 +134,10 @@ function displayDifficultPlayerSelections(array) {
       <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">
       <button class="fighter-buttons-classic" id="${array[i]}BtnDifficult">
       <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
-      console.log("THIS WORKS 1 ");
     } else if (array[i] === newGame.humanPlayer.selection || array[i] === newGame.computerPlayer.selection) {
       playerSelectionsIconContainerDifficult.insertAdjacentHTML("beforeend", `
       <button class="fighter-buttons-classic" id="${array[i]}BtnDifficult">
       <img class="fighter-icons-classic" src="../assets/black-and-white-${array[i]}.png" alt="${array[i]} fighter">`)
-      console.log("THIS WORKS 1 ");
     }
   }
 }
@@ -157,7 +155,6 @@ function displayWinCounterData() {
     newGame.humanPlayer.retrieveWinsFromStorage();
     humanPlayerWinsCounter.innerText = `WINS: ${humanPlayerObjectParsed.wins}`;
     computerPlayerWinsCounter.innerText = `WINS: ${computerPlayerObjectParsed.wins}`;
-    console.log("displayWinCounter fxn works!");
     }
 }
 
